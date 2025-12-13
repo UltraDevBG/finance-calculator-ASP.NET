@@ -1,0 +1,312 @@
+﻿@page "/credit-calculator/{savedHash?}"
+@model CreditModel
+@{
+}
+<h1 class="text-center mb-5">Кредитен Калкулатор</h1>
+<form class="container credit-calculator-form" style="width: 500px" novalidate method="post">
+
+    <!-- Credit Amount -->
+    <div class="row mb-3">
+        <div class="col">
+            <div class="form-floating" id="credit_amount_fieldset">
+                <input  asp-for="credit_amount" value="@ViewData["credit_amount"]" type="number" class="form-control @ViewData["credit_amount_error"]" placeholder="Размер на кредит" min="100" step="1" required>
+                <label for="credit_amount">Размер на кредит (лв.) *</label>
+                <div class="valid-feedback">
+                    Правилно.
+                </div>
+                <div class="invalid-feedback">
+                    Невалидни данни. Въведете сума между 100 лв. и 10,000,000 лв.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+
+            <!-- Credit Length -->
+            <div class="form-floating" id="credit_length_fieldset">
+                <input asp-for="credit_length" value="@ViewData["credit_length"]" type="number" class="form-control @ViewData["credit_length_error"]" placeholder="Срок" min="1" max="960" step="1"  required>
+                <label for="credit_length">Срок (месеци) *</label>
+                <div class="valid-feedback">
+                    Правилно.
+                </div>
+                <div class="invalid-feedback">
+                    Невалидни данни. Въведете срок до 960 месеца.
+                </div>
+            </div>
+        </div>
+
+        <!-- Credit Interest -->
+        <div class="col">
+            <div class="form-floating" id="credit_interest_fieldset">
+                <input asp-for="credit_interest" value="@ViewData["credit_interest"]" type="number" class="form-control @ViewData["credit_interest_error"]" placeholder="Лихва" min="0" max="500" step="0.01" required>
+                <label for="credit_interest">Лихва (%) *</label>
+                <div class="valid-feedback">
+                    Правилно
+                </div>
+                <div class="invalid-feedback">
+                    Невалидни данни. Въведете лихва до 500 процента.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payments Type -->
+    <div class="row mb-3">
+        <div class="col">
+            <div id="help" class="form-text">Изберете вид вноски. *</div>
+            <select asp-for="payment_type" value="@ViewData["payment_type"]" class="form-select" required>
+                <option value="annuity" selected>Анюитетни вноски</option>
+                <option value="descreasing">Намаляващи вноски</option>
+            </select>
+            <div class="valid-feedback">
+                Правилно
+            </div>
+            <div class="invalid-feedback">
+                Невалидни данни. Изберете вид вноски.
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Fields -->
+    <div class="row mb-3">
+        <div class="accordion" id="additional_fields">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#promoPeriod">
+                        Промоционален Период
+                    </button>
+                </h2>
+
+                <!-- Promotional Fields -->
+                <div id="promoPeriod" class="accordion-collapse collapse" data-bs-parent="#additional_fields">
+                    <div class="accordion-body">
+                        <div class="row mb-2 g-2">
+
+                            <!-- Promotional Period -->
+                            <div class="col">
+                                <div class="form-floating" id="promo_period_fieldset">
+                                    <input asp-for="promo_period" value="@ViewData["promo_period"]" type="number" class="form-control form-control-sm @ViewData["promo_period_error"]" placeholder="Промоционален Период" min="0" max="960" step="1">
+                                    <label for="promo_period">Промо. период (месеци)</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни. Промоционалният период трябва да е по-малък от срока на кредита.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Promotional Interest -->
+                            <div class="col">
+                                <div class="form-floating" id="promo_interest_fieldset">
+                                    <input asp-for="promo_interest" value="@ViewData["promo_interest"]" type="number" class="form-control form-control-sm @ViewData["promo_interest_error"]" placeholder="Промоционална лихва" min="0" step="0.01">
+                                    <label for="promo_interest">Промо. лихва</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни. Въведете лихва до 500 процента.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gratis Period -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating" id="gratis_period_fieldset">
+                                    <input asp-for="gratis_period" value="@ViewData["gratis_period"]" type="number" class="form-control form-control-sm @ViewData["gratis_period_error"]" placeholder="Гратисен период" min="0" step="1">
+                                    <label for="gratis_period">Гратисен период</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.  Гратисния период трябва да е по-малък от целия период на кредита.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fees Fields -->
+            <div class="accordion-item" id="fees_fieldset">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fees">
+                        Такси
+                    </button>
+                </h2>
+                <div id="fees" class="accordion-collapse collapse" data-bs-parent="#additional_fields">
+                    <div class="accordion-body">
+                        <div class="row mb-3 g-2">
+
+                            <!-- Starter Fees -->
+                            <div class="lead">Първоначални Такси</div>
+
+                            <!-- Application Fee -->
+                            <div class="input-group" id="application_fee_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="application_fee" value="@ViewData["application_fee"]" type="number" class="form-control form-control-sm @ViewData["application_fee_error"]" placeholder="Такса Кандидатстване" min="0" step="0.01">
+                                    <label for="application_fee">Такса кандидатстване</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни. 
+                                    </div>
+                                </div>
+                                <select asp-for="application_fee_option" value="@ViewData["application_fee_option"]" class="form-select @ViewData["application_fee_option_error"]" style="width: 100px;">
+                                    <option value="currency" selected>лв.</option>
+                                    <option value="percent">%</option>
+                                </select>
+                            </div>
+
+                            <!-- Processing Fee -->
+                            <div class="input-group" id="processing_fee_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="processing_fee" value="@ViewData["processing_fee"]" type="number" class="form-control form-control-sm @ViewData["processing_fee_error"]" placeholder="Такса Обработка" min="0" step="0.01">
+                                    <label for="processing_fee">Такса обработка</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select asp-for="processing_fee_option" value="@ViewData["processing_fee_option"]" class="form-select @ViewData["processing_fee_option_error"]" style="width: 100px;" >
+                                    <option value="currency">лв.</option>
+                                    <option value="percent selected">%</option>
+                                </select>
+                            </div>
+
+                            <!-- Other Fees -->
+                            <div class="input-group" id="other_starter_fees_fieldset" >
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="other_starter_fees" value="@ViewData["other_starter_fees"]" type="number" class="form-control form-control-sm @ViewData["other_starter_fees_error"]" placeholder="Други такси" min="0" step="0.01">
+                                    <label for="other_starter_fees">Други такси</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select asp-for="other_starter_fees_option" value="@ViewData["other_starter_fees_option"]" class="form-select @ViewData["other_starter_fees_option_error"]" style="width: 100px;">
+                                    <option value="currency" selected>лв.</option>
+                                    <option value="percent">%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Yearly Fees -->
+                        <div class="row mb-3 g-2">
+                            <div class="lead">Годишни Такси</div>
+
+                            <!-- Annual Management Fee -->
+                            <div class="input-group" id="yearly_management_fees_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="yearly_management_fees" value="@ViewData["yearly_management_fees"]" type="number" class="form-control form-control-sm @ViewData["yearly_management_fees_error"]" placeholder="Годишна такса управление" min="0" step="0.01">
+                                    <label for="yearly_management_fees">Годишна такса управление</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select class="form-select @ViewData["yearly_management_fees_option_error"]" value="@ViewData["yearly_management_fees_option"]" style="width: 100px;" asp-for="yearly_management_fees_option">
+                                    <option value="currency">лв.</option>
+                                    <option value="percent" selected>%</option>
+                                </select>
+                            </div>
+
+                            <!-- Other Yearly Fees -->
+                            <div class="input-group" id="yearly_other_fees_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="yearly_other_fees" value="@ViewData["yearly_other_fees"]" type="number" class="form-control form-control-sm @ViewData["yearly_other_fees_error"]" placeholder="Други годишни такси" min="0" step="0.01">
+                                    <label for="yearly_other_fees">Други годишни такси</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select asp-for="yearly_other_fees_option" value="@ViewData["yearly_other_fees_option"]" class="form-select @ViewData["yearly_other_fees_option_error"]" style="width: 100px;" >
+                                    <option value="currency" selected>лв.</option>
+                                    <option value="percent">%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Fees -->
+                        <div class="row mb-3 g-2">
+                            <div class="lead">Месечни Такси</div>
+
+                            <!-- Monthly Management Fee -->
+                            <div class="input-group" id="monthly_management_fees_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="monthly_management_fees" value="@ViewData["monthly_management_fees"]" type="number" class="form-control form-control-sm @ViewData["monthly_management_fees_error"]" placeholder="Месечна такса управление" min="0" step="0.01">
+                                    <label for="monthly_management_fees">Месечна такса управление</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select asp-for="monthly_management_fees_option" value="@ViewData["monthly_management_fees_option"]" class="form-select @ViewData["monthly_management_fees_option_error"]" style="width: 100px;">
+                                    <option value="currency">лв.</option>
+                                    <option value="percent" selected>%</option>
+                                </select>
+                            </div>
+
+                            <!-- Other Monthly Fees -->
+                            <div class="input-group" id="monthly_other_fees_fieldset">
+                                <div class="form-floating flex-grow-1">
+                                    <input asp-for="monthly_other_fees" type="number" value="@ViewData["monthly_other_fees"]" class="form-control form-control-sm @ViewData["monthly_other_fees_error"]" placeholder="Други месечни такси" min="0" step="0.01">
+                                    <label for="monthly_other_fees">Други месечни такси</label>
+                                    <div class="valid-feedback">
+                                        Правилно.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Невалидни данни.
+                                    </div>
+                                </div>
+                                <select asp-for="monthly_other_fees_option" value="@ViewData["monthly_other_fees_option"]" class="form-select @ViewData["monthly_other_fees_option_error"]" style="width: 100px;" >
+                                    <option value="currency" selected>лв.</option>
+                                    <option value="percent">%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div
+
+    <!-- Submit Button -->
+    <div class="row mb-3 px-3">
+        <button type="submit" class="btn btn-primary">Изчисли</button>
+    </div>
+
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Месечна вноска</th>
+            <th scope="col">Вноска главница</th>
+            <th scope="col">Вноска лихва</th>
+            <th scope="col">Остатък главница</th>
+            <th scope="col">Такси и комисионни</th>
+            <th scope="col">Паричен поток</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
