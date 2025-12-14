@@ -3,14 +3,14 @@
     <StaticWebAssetEndpoint Include="_content/Finance Calculator/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"177"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 29 Jan 2025 17:34:55 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3186"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 13:12:46 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Finance Calculator/css/site.gnp3jwhdyo.css">
+    <StaticWebAssetEndpoint Include="_content/Finance Calculator/css/site.glhdhm0m1z.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gnp3jwhdyo"},{"Name":"integrity","Value":"sha256-ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU="},{"Name":"label","Value":"_content/Finance Calculator/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"177"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 29 Jan 2025 17:34:55 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"glhdhm0m1z"},{"Name":"integrity","Value":"sha256-rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI="},{"Name":"label","Value":"_content/Finance Calculator/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3186"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 13:12:46 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Finance Calculator/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -28,13 +28,25 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Finance Calculator.0wqu1e8eop.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0wqu1e8eop"},{"Name":"integrity","Value":"sha256-YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU="},{"Name":"label","Value":"_content/Finance Calculator/Finance Calculator.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 13 Dec 2025 10:30:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 10:21:42 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Finance Calculator/Finance Calculator.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Finance Calculator.0wqu1e8eop.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 13 Dec 2025 10:30:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 10:21:42 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Finance Calculator/images/financial-calculator.27lk7mbace.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\financial-calculator.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"27lk7mbace"},{"Name":"integrity","Value":"sha256-TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU="},{"Name":"label","Value":"_content/Finance Calculator/images/financial-calculator.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"246001"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 12:16:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Finance Calculator/images/financial-calculator.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\financial-calculator.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"246001"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 12:16:12 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Finance Calculator/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
@@ -587,6 +599,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"z6qzljqjd0"},{"Name":"integrity","Value":"sha256-WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A="},{"Name":"label","Value":"_content/Finance Calculator/lib/bootstrap/LICENSE"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A=\u0022"},{"Name":"Last-Modified","Value":"Wed, 29 Jan 2025 17:34:55 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Finance Calculator/lib/chart/chart.0bzpsopg7j.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\chart\chart.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0bzpsopg7j"},{"Name":"integrity","Value":"sha256-BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/\u002B4FgA="},{"Name":"label","Value":"_content/Finance Calculator/lib/chart/chart.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"252617"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/\u002B4FgA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 12:31:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Finance Calculator/lib/chart/chart.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\chart\chart.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/\u002B4FgA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"252617"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/\u002B4FgA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 12:31:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Finance Calculator/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.0td7jq9nxb.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'))</AssetFile>

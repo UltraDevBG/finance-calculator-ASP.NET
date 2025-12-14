@@ -7,59 +7,70 @@ namespace Finance_Calculator.Pages
     {
         private readonly ILogger<CreditModel> _logger;
 
-
         [BindProperty]
         public int credit_amount { get; set; }
+
         [BindProperty]
         public int credit_length { get; set; }
+
         [BindProperty]
         public decimal credit_interest { get; set; }
+
         [BindProperty]
-        public string payment_type { get; set; }
+        public string payment_type { get; set; } = "annuity";
 
         [BindProperty]
         public int promo_period { get; set; }
+
         [BindProperty]
         public decimal promo_interest { get; set; }
+
         [BindProperty]
         public int gratis_period { get; set; }
 
         [BindProperty]
         public decimal application_fee { get; set; }
+
         [BindProperty]
-        public string application_fee_option { get; set; }
+        public string? application_fee_option { get; set; }
 
         [BindProperty]
         public decimal processing_fee { get; set; }
+
         [BindProperty]
-        public string processing_fee_option { get; set; }
+        public string? processing_fee_option { get; set; }
 
         [BindProperty]
         public decimal other_starter_fees { get; set; }
+
         [BindProperty]
-        public string other_starter_fees_option { get; set; }
+        public string? other_starter_fees_option { get; set; }
 
         [BindProperty]
         public decimal yearly_management_fees { get; set; }
+
         [BindProperty]
-        public string yearly_management_fees_option { get; set; }
+        public string? yearly_management_fees_option { get; set; }
 
         [BindProperty]
         public decimal yearly_other_fees { get; set; }
+
         [BindProperty]
-        public string yearly_other_fees_option { get; set; }
+        public string? yearly_other_fees_option { get; set; }
 
         [BindProperty]
         public decimal monthly_management_fees { get; set; }
+
         [BindProperty]
-        public string monthly_management_fees_option { get; set; }
+        public string? monthly_management_fees_option { get; set; }
 
         [BindProperty]
         public decimal monthly_other_fees { get; set; }
-        [BindProperty]
-        public string monthly_other_fees_option { get; set; }
 
-        public decimal[,] result;
+        [BindProperty]
+        public string? monthly_other_fees_option { get; set; }
+
+        public decimal[,]? result;
 
         public CreditModel(ILogger<CreditModel> logger)
         {
@@ -67,115 +78,127 @@ namespace Finance_Calculator.Pages
         }
 
         public void OnPost()
-        {
+        {     
+            application_fee_option ??= "currency";
+            processing_fee_option ??= "currency";
+            other_starter_fees_option ??= "currency";
+            yearly_management_fees_option ??= "currency";
+            yearly_other_fees_option ??= "currency";
+            monthly_management_fees_option ??= "currency";
+            monthly_other_fees_option ??= "currency";
+
             AssignData();
 
             if (!Validate())
-            {
                 return;
-            }
 
             Calculate();
         }
 
         private void Calculate()
         {
-            int years = 0;
-            decimal
-                initial_fees = 0.0m,
-                yearly_fee = 0.0m,
-                monthly_fee = 0.0m,
-                principal_balance = 0.0m,
-                principal_installment = 0.0m,
-                monthly_interest = 0.0m,
-                total_fees = 0.0m,
-                total_interest = 0.0m,
-                total_installments = 0.0m;
+            decimal principal_balance = credit_amount;
+            decimal total_interest = 0m;
+            decimal total_fees = 0m;
+            decimal total_installments = 0m;
 
-            if (credit_length > 12)
-            {
-                years = (credit_length - 1) / 12;
-                ViewData["years"] = years;
-            }
-
-            initial_fees += calculateFee(application_fee_option, credit_amount, application_fee);
-            initial_fees += calculateFee(processing_fee_option, credit_amount, processing_fee);
-            initial_fees += calculateFee(other_starter_fees_option, credit_amount, other_starter_fees);
-
+            // --- Initial fees ---
+            decimal initial_fees = 0m;
+            initial_fees += calculateFee(application_fee_option!, credit_amount, application_fee);
+            initial_fees += calculateFee(processing_fee_option!, credit_amount, processing_fee);
+            initial_fees += calculateFee(other_starter_fees_option!, credit_amount, other_starter_fees);
             total_fees += initial_fees;
-
-            principal_balance = (decimal)credit_amount;
 
             result = new decimal[credit_length + 1, 7];
 
-            result = FillRow(result, 0, 0, 0, 0, principal_balance, initial_fees, credit_amount - initial_fees);
+            // Row 0 – initial cash flow
+            result = FillRow(
+                result,
+                0,
+                0,
+                0,
+                0,
+                principal_balance,
+                initial_fees,
+                credit_amount - initial_fees
+            );
+
+            // --- Pre-calc annuity payment (if needed) ---
+            decimal annuityPayment = 0m;
+            if (payment_type == "annuity" && credit_length > gratis_period)
+            {
+                annuityPayment = (decimal)Microsoft.VisualBasic.Financial.Pmt(
+                    (double)(credit_interest / 100 / 12),
+                    credit_length - gratis_period,
+                    (double)-credit_amount
+                );
+            }
 
             for (int i = 1; i <= credit_length; i++)
             {
-                decimal monthly_installment = 0.0m, money_flow = 0.0m, monthly_fees_total = 0.0m;
-                decimal this_month_interest = credit_interest / 100;
+                decimal monthly_interest_rate =
+                    (i <= promo_period ? promo_interest : credit_interest) / 100 / 12;
 
-                if (i <= promo_period)
+                decimal monthly_interest = principal_balance * monthly_interest_rate;
+                decimal principal_installment = 0m;
+                decimal monthly_installment = 0m;
+
+                if (i <= gratis_period)
                 {
-                    this_month_interest = promo_interest / 100;
+                    monthly_installment = monthly_interest;
                 }
-
-                principal_balance -= principal_installment;
-                monthly_interest = principal_balance * this_month_interest / 12;
-
-                if (i > gratis_period)
+                else
                 {
                     if (payment_type == "descreasing")
                     {
                         principal_installment = credit_amount / (credit_length - gratis_period);
                         monthly_installment = principal_installment + monthly_interest;
                     }
-                    else
+                    else // annuity
                     {
-                        monthly_installment = (decimal)Microsoft.VisualBasic.Financial.Pmt((double)this_month_interest / 12, credit_length - i + 1, (double)-principal_balance);
+                        monthly_installment = annuityPayment;
                         principal_installment = monthly_installment - monthly_interest;
                     }
                 }
-                else
-                {
-                    monthly_installment = monthly_interest;
-                }
 
-                monthly_fees_total += calculateFee(monthly_management_fees_option, principal_balance, monthly_management_fees);
-                monthly_fees_total += calculateFee(monthly_other_fees_option, principal_balance, monthly_other_fees);
+                decimal monthly_fees = 0m;
+                monthly_fees += calculateFee(monthly_management_fees_option!, principal_balance, monthly_management_fees);
+                monthly_fees += calculateFee(monthly_other_fees_option!, principal_balance, monthly_other_fees);
 
                 if (i % 12 == 0)
                 {
-                    monthly_fees_total += calculateFee(yearly_management_fees_option, principal_balance, yearly_management_fees);
-                    monthly_fees_total += calculateFee(yearly_other_fees_option, principal_balance, yearly_other_fees);
+                    monthly_fees += calculateFee(yearly_management_fees_option!, principal_balance, yearly_management_fees);
+                    monthly_fees += calculateFee(yearly_other_fees_option!, principal_balance, yearly_other_fees);
                 }
 
                 total_interest += monthly_interest;
                 total_installments += monthly_installment;
-                total_fees += monthly_fees_total;
+                total_fees += monthly_fees;
 
-                money_flow = -(monthly_fees_total + monthly_installment);
+                principal_balance -= principal_installment;
+                if (principal_balance < 0) principal_balance = 0;
 
-                result = FillRow(result, i, monthly_installment, principal_installment, monthly_interest, principal_balance, monthly_fees_total, money_flow);
+                decimal money_flow = -(monthly_installment + monthly_fees);
+
+                result = FillRow(
+                    result,
+                    i,
+                    monthly_installment,
+                    principal_installment,
+                    monthly_interest,
+                    principal_balance,
+                    monthly_fees,
+                    money_flow
+                );
             }
-
-            decimal total_paid = total_installments + total_fees;
-            double interestGPR = Microsoft.VisualBasic.Financial.Rate(credit_length, (double)-(total_paid / credit_length), credit_amount) * 12;
-            decimal GPR = (decimal)Math.Pow((interestGPR / 12) + 1.0, 12) - 1;
-
-            ViewData["result"] = result;
         }
 
         private decimal calculateFee(string option, decimal total, decimal fee)
         {
             if (option == "percent")
-            {
                 return total * (fee / 100);
-            }
             else
-            {
                 return fee;
-            }
         }
 
         private void AssignData()
@@ -201,77 +224,36 @@ namespace Finance_Calculator.Pages
             ViewData["monthly_management_fees_option"] = monthly_management_fees_option;
             ViewData["monthly_other_fees"] = monthly_other_fees;
             ViewData["monthly_other_fees_option"] = monthly_other_fees_option;
-
-            return;
         }
 
         private bool Validate()
         {
-
             bool has_error = false;
 
             if (credit_amount < 100 || credit_amount > 10000000)
-            {
                 has_error = MarkError("credit_amount_error");
-            }
             if (credit_length <= 0 || credit_length > 960)
-            {
                 has_error = MarkError("credit_length_error");
-            }
             if (credit_interest < 0 || credit_interest > 500)
-            {
                 has_error = MarkError("credit_interest_error");
-            }
             if (payment_type != "annuity" && payment_type != "descreasing")
-            {
                 has_error = MarkError("payment_type_error");
-            }
 
             if (promo_period > credit_length || promo_period < 0)
-            {
                 has_error = MarkError("promo_period_error");
-            }
             if (promo_interest > credit_interest || promo_interest < 0)
-            {
                 has_error = MarkError("promo_interest_error");
-            }
 
-            if (!ValidateFeeField("application_fee", application_fee, application_fee_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("processing_fee", processing_fee, processing_fee_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("other_starter_fees", other_starter_fees, other_starter_fees_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("yearly_management_fees", yearly_management_fees, yearly_management_fees_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("yearly_other_fees", yearly_other_fees, yearly_other_fees_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("monthly_management_fees", monthly_management_fees, monthly_management_fees_option))
-            {
-                has_error = true;
-            }
-            if (!ValidateFeeField("monthly_other_fees", monthly_other_fees, monthly_other_fees_option))
-            {
-                has_error = true;
-            }
+            has_error |= !ValidateFeeField("application_fee", application_fee, application_fee_option!);
+            has_error |= !ValidateFeeField("processing_fee", processing_fee, processing_fee_option!);
+            has_error |= !ValidateFeeField("other_starter_fees", other_starter_fees, other_starter_fees_option!);
+            has_error |= !ValidateFeeField("yearly_management_fees", yearly_management_fees, yearly_management_fees_option!);
+            has_error |= !ValidateFeeField("yearly_other_fees", yearly_other_fees, yearly_other_fees_option!);
+            has_error |= !ValidateFeeField("monthly_management_fees", monthly_management_fees, monthly_management_fees_option!);
+            has_error |= !ValidateFeeField("monthly_other_fees", monthly_other_fees, monthly_other_fees_option!);
 
             ViewData["has_error"] = has_error;
-
-            if (has_error)
-            {
-                return false;
-            }
-            return true;
+            return !has_error;
         }
 
         private bool ValidateFeeField(string field_name, decimal value, string option)
@@ -279,16 +261,12 @@ namespace Finance_Calculator.Pages
             if (option == "currency")
             {
                 if (value < 0 || value > credit_amount)
-                {
                     return !MarkError(field_name + "_error");
-                }
             }
             else if (option == "percent")
             {
                 if (value < 0 || value > 40)
-                {
                     return !MarkError(field_name + "_error");
-                }
             }
             else
             {

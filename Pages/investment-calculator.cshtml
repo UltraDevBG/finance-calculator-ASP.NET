@@ -1,0 +1,148 @@
+﻿@page "/investment-calculator"
+@model Finance_Calculator.Pages.InvestmentModel
+
+<div class="calculator-page">
+    <div class="calculator-card">
+
+        <h1 class="calculator-title">Инвестиционен калкулатор</h1>
+
+        <form method="post" novalidate>
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <!-- Initial Investment -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="initial_investment"
+                               type="number"
+                               class="form-control"
+                               placeholder="Начална инвестиция" min="0" step="1" required>
+                        <label>Начална инвестиция (лв.) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Contribution -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="monthly_contribution"
+                               type="number"
+                               class="form-control"
+                               placeholder="Месечна вноска" min="0" step="1" required>
+                        <label>Месечна вноска (лв.)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interest Rate -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="annual_interest"
+                               type="number"
+                               class="form-control"
+                               placeholder="Годишна доходност" min="0" step="0.01" required>
+                        <label>Годишна доходност (%) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Term -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="years"
+                               type="number"
+                               class="form-control"
+                               placeholder="Срок на инвестицията" min="1" step="1" required>
+                        <label>Срок на инвестицията (години) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary w-100">Изчисли</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.Results != null)
+{
+    <div class="container mt-4">
+        <h3 class="text-center mb-3">Резултати</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Година</th>
+                    <th>Начален баланс</th>
+                    <th>Добавки</th>
+                    <th>Лихва</th>
+                    <th>Краен баланс</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for (int i = 0; i < Model.Results.Length; i++)
+            {
+                var r = Model.Results[i];
+                <tr>
+                    <td>@r.Year</td>
+                    <td>@r.StartBalance.ToString("N2")</td>
+                    <td>@r.Contribution.ToString("N2")</td>
+                    <td>@r.Interest.ToString("N2")</td>
+                    <td>@r.EndBalance.ToString("N2")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+        <!-- Chart -->
+        <div class="mt-5 text-center" style="max-width: 600px; height: 300px; margin: 0 auto;">
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            const ctx = document.getElementById('investmentChart').getContext('2d');
+
+            // Labels (years)
+            const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+                Model.Results.Select(r => r.Year)
+            ));
+
+            // Data (end balances)
+            const data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+                Model.Results.Select(r => r.EndBalance)
+            ));
+
+            const investmentChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Краен баланс (лв.)',
+                        data: data,
+                        fill: true,
+                        backgroundColor: 'rgba(59, 91, 219, 0.2)',
+                        borderColor: 'rgba(59, 91, 219, 1)',
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, position: 'top' },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Година' } },
+                        y: { title: { display: true, text: 'Баланс (лв.)' }, beginAtZero: true }
+                    }
+                }
+            });
+
+        </script>
+    }
+}

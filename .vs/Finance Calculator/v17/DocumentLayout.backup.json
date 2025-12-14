@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\credit-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\credit-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\investment-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\investment-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\prepayment-calculator.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\prepayment-calculator.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\prepayment-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\prepayment-calculator.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|z:\\gitrepos\\personal\\finance-calculator-asp.net\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{960A8FCA-1EC6-4283-B102-29DE56364AAE}|Finance Calculator.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 187,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "credit-calculator.cshtml",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\credit-calculator.cshtml",
+              "RelativeDocumentMoniker": "Pages\\credit-calculator.cshtml",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\credit-calculator.cshtml",
+              "RelativeToolTip": "Pages\\credit-calculator.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T13:15:47.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAcwJIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-14T13:12:28.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "investment-calculator.cshtml",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\investment-calculator.cshtml",
+              "RelativeDocumentMoniker": "Pages\\investment-calculator.cshtml",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\investment-calculator.cshtml",
+              "RelativeToolTip": "Pages\\investment-calculator.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAvwHQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T13:10:06.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "prepayment-calculator.cshtml.cs",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\prepayment-calculator.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\prepayment-calculator.cshtml.cs",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\prepayment-calculator.cshtml.cs",
+              "RelativeToolTip": "Pages\\prepayment-calculator.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T12:53:25.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "prepayment-calculator.cshtml",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\prepayment-calculator.cshtml",
+              "RelativeDocumentMoniker": "Pages\\prepayment-calculator.cshtml",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\prepayment-calculator.cshtml",
+              "RelativeToolTip": "Pages\\prepayment-calculator.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T12:52:57.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAswD0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T12:49:03.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T12:48:24.31Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

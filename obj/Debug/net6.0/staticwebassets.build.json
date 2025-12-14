@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KpkIt0hrK53oS/HmFwIv5bdczWjpZnK03GGlvXTFTJU=",
+  "Hash": "LmzcHq+S1G8GVwJhGPb7Pvwz7dlH/sI0+xxd2nYxbgY=",
   "Source": "Finance Calculator",
   "BasePath": "_content/Finance Calculator",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gnp3jwhdyo",
-      "Integrity": "ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU=",
+      "Fingerprint": "glhdhm0m1z",
+      "Integrity": "rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\images\\financial-calculator.png",
+      "SourceId": "Finance Calculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\",
+      "BasePath": "_content/Finance Calculator",
+      "RelativePath": "images/financial-calculator#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "27lk7mbace",
+      "Integrity": "TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\financial-calculator.png"
     },
     {
       "Identity": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\js\\site.js",
@@ -1067,6 +1088,27 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
+      "Identity": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\chart\\chart.js",
+      "SourceId": "Finance Calculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\",
+      "BasePath": "_content/Finance Calculator",
+      "RelativePath": "lib/chart/chart#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0bzpsopg7j",
+      "Integrity": "BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/+4FgA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\chart\\chart.js"
+    },
+    {
       "Identity": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Finance Calculator",
       "SourceType": "Discovered",
@@ -1331,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "177"
+          "Value": "3186"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU=\""
+          "Value": "\"rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 29 Jan 2025 17:34:55 GMT"
+          "Value": "Sun, 14 Dec 2025 13:12:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,12 +1395,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU="
+          "Value": "sha256-rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI="
         }
       ]
     },
     {
-      "Route": "css/site.gnp3jwhdyo.css",
+      "Route": "css/site.glhdhm0m1z.css",
       "AssetFile": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1368,7 +1410,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "177"
+          "Value": "3186"
         },
         {
           "Name": "Content-Type",
@@ -1376,11 +1418,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU=\""
+          "Value": "\"rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 29 Jan 2025 17:34:55 GMT"
+          "Value": "Sun, 14 Dec 2025 13:12:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1390,7 +1432,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gnp3jwhdyo"
+          "Value": "glhdhm0m1z"
         },
         {
           "Name": "label",
@@ -1398,7 +1440,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZJg29BfKMfPQ1nmIkdqg6iWhTGRNJx2HnD4FfdtVCcU="
+          "Value": "sha256-rBzCbFBdEl7F9ATvTg3AF2n88p7LGcYk8U015vNCZSI="
         }
       ]
     },
@@ -1507,7 +1549,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 13 Dec 2025 10:30:27 GMT"
+          "Value": "Sun, 14 Dec 2025 10:21:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1552,7 +1594,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 13 Dec 2025 10:30:27 GMT"
+          "Value": "Sun, 14 Dec 2025 10:21:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1597,7 +1639,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 13 Dec 2025 10:30:27 GMT"
+          "Value": "Sun, 14 Dec 2025 10:21:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1634,7 +1676,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 13 Dec 2025 10:30:27 GMT"
+          "Value": "Sun, 14 Dec 2025 10:21:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1645,6 +1687,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-YIPPocQJTRmbrhRrc5GIdA3MVhnW8dAntXpuBA5XeVU="
+        }
+      ]
+    },
+    {
+      "Route": "images/financial-calculator.27lk7mbace.png",
+      "AssetFile": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\images\\financial-calculator.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "246001"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 14 Dec 2025 12:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "27lk7mbace"
+        },
+        {
+          "Name": "label",
+          "Value": "images/financial-calculator.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU="
+        }
+      ]
+    },
+    {
+      "Route": "images/financial-calculator.png",
+      "AssetFile": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\images\\financial-calculator.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "246001"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 14 Dec 2025 12:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TldUjlp93AoGfnMotnzrK4AFbpJddfuGoT8tSBqttYU="
         }
       ]
     },
@@ -5417,6 +5541,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A="
+        }
+      ]
+    },
+    {
+      "Route": "lib/chart/chart.0bzpsopg7j.js",
+      "AssetFile": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\chart\\chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "252617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/+4FgA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 14 Dec 2025 12:31:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0bzpsopg7j"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/chart/chart.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/+4FgA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/chart/chart.js",
+      "AssetFile": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\chart\\chart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "252617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/+4FgA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 14 Dec 2025 12:31:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BPUQSz/7etuwIj2L8/49mtawuwgZAbW/MBnAa/+4FgA="
         }
       ]
     },

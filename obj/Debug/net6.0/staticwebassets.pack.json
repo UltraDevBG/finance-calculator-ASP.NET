@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\images\\financial-calculator.png",
+      "PackagePath": "staticwebassets\\images\\financial-calculator.png"
+    },
+    {
       "Id": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -195,6 +199,10 @@
     {
       "Id": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\chart\\chart.js",
+      "PackagePath": "staticwebassets\\lib\\chart\\chart.js"
     },
     {
       "Id": "Z:\\GitRepos\\Personal\\finance-calculator-ASP.NET\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",

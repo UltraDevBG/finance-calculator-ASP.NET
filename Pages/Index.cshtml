@@ -1,10 +1,26 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Financial Calculator";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome23</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Financial Calculator Practice</h1>
+        <p class="lead">
+            This application is a practice project for CSCB532.
+            Use this calculator to perform common financial calculations such as interest, loan payments, and investments.
+        </p>
+    </div>
+
+    <div class="text-center mb-4">
+        <img src="~/images/financial-calculator.png" alt="Financial Calculator" class="img-fluid rounded shadow" style="max-width: 500px;">
+    </div>
+
+    <div class="text-center">
+        <p>
+            Start exploring the financial calculator by navigating to the tools section, or learn more about ASP.NET Core
+            <a href="https://docs.microsoft.com/aspnet/core" target="_blank">here</a>.
+        </p>
+    </div>
 </div>

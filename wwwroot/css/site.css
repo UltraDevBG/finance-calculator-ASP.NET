@@ -1,18 +1,153 @@
-html {
-  font-size: 14px;
+﻿/* ============================= */
+/* Design tokens */
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --primary: #3b5bdb;
+    --primary-soft: #eef2ff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-soft: #e5e7eb;
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.06);
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* ============================= */
+/* Base */
 body {
-  margin-bottom: 60px;
+    background: var(--bg);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
 }
+
+/* ============================= */
+/* Page */
+.calculator-page {
+    padding: 4rem 1rem;
+}
+
+.calculator-card {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 2.5rem;
+}
+
+/* ============================= */
+/* Title */
+.calculator-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ============================= */
+/* Inputs */
+.form-floating > label {
+    color: var(--text-muted);
+}
+
+.form-control,
+.form-select {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-soft);
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px var(--primary-soft);
+    }
+
+/* ============================= */
+/* Accordion */
+.accordion-item {
+    border: none;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.accordion-button {
+    background: #f9fafb;
+    font-weight: 500;
+}
+
+    .accordion-button:not(.collapsed) {
+        background: var(--primary-soft);
+        color: var(--primary);
+    }
+
+/* ============================= */
+/* Button */
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    padding: 0.9rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(59, 91, 219, 0.25);
+    }
+
+/* ============================= */
+/* Results table */
+.table {
+    margin-top: 2rem;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+    .table th {
+        background: #f9fafb;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+
+    .table td {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .table tbody tr:hover {
+        background: #f4f6fb;
+    }
+
+/* ============================= */
+/* Validation */
+.is-invalid {
+    border-color: #ef4444 !important;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-right: 5px;
+    padding: 8px 12px;
+}
+
+    /* Hover ефект */
+    .navbar-nav .nav-link:hover {
+        background-color: #3b5bdb;
+        color: white !important;
+    }
+
+    /* Активен таб */
+    .navbar-nav .nav-link.active-tab {
+        background-color: #3b5bdb;
+        color: white !important;
+        font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+

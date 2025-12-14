@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Finance Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09b412561fb440df0d034de4c132b3418bc1ed52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4527cde6ce095c2a0b16024a6176f25397133f8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Finance Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Finance Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,94 @@
+﻿@page "/prepayment-calculator"
+@model Finance_Calculator.Pages.PrepaymentModel
+
+<div class="calculator-page">
+    <div class="calculator-card">
+
+        <h1 class="calculator-title">Калкулатор за предсрочно погасяване</h1>
+
+        <form method="post" novalidate>
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <!-- Loan Amount -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="loan_amount" type="number" class="form-control" placeholder="Размер на кредита" min="100" step="1" required>
+                        <label>Размер на кредита (лв.) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining Term -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="remaining_months" type="number" class="form-control" placeholder="Остатък срок (месеци)" min="1" step="1" required>
+                        <label>Остатък срок (месеци) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interest Rate -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="interest_rate" type="number" class="form-control" placeholder="Лихвен процент" min="0" step="0.01" required>
+                        <label>Лихвен процент (%) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining Principal to Prepay -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="prepayment_amount" type="number" class="form-control" placeholder="Предсрочно плащане" min="0" step="1" required>
+                        <label>Сума за предсрочно погасяване (лв.) *</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Prepayment Type -->
+            <div class="mb-3">
+                <label class="form-label text-muted">Начин на предсрочно погасяване *</label>
+                <select asp-for="prepayment_type" class="form-select" required>
+                    <option value="reduce_term">Редуциране на срока</option>
+                    <option value="reduce_payment">Редуциране на вноската</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Изчисли</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.Result != null)
+{
+    <div class="mt-4">
+        <h3 class="text-center mb-3">Резултати</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Месец</th>
+                    <th>Месечна вноска</th>
+                    <th>Главница</th>
+                    <th>Лихва</th>
+                    <th>Остатък</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Result.GetLength(0); i++)
+                {
+                    <tr>
+                        <td>@Model.Result[i, 0]</td>
+                        <td>@Model.Result[i, 1]</td>
+                        <td>@Model.Result[i, 2]</td>
+                        <td>@Model.Result[i, 3]</td>
+                        <td>@Model.Result[i, 4]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

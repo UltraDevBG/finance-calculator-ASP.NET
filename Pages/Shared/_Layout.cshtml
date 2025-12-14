@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Finance_Calculator</title>
+    <title>@ViewData["Title"] - CSCB532 – Financial Calculator Practice</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Finance_Calculator.styles.css" asp-append-version="true" />
@@ -12,20 +12,26 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Finance_Calculator</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    @inject Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper Html
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Начало</a>
+                            <a class="nav-link text-dark @(Context.Request.Path == "/" ? "active-tab" : "")" asp-area="" asp-page="/Index">Начало</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/credit-calculator">Кредит</a>
+                            <a class="nav-link text-dark @(Context.Request.Path.StartsWithSegments("/credit-calculator") ? "active-tab" : "")" asp-area="" asp-page="/credit-calculator">Кредитен калкулатор</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark @(Context.Request.Path.StartsWithSegments("/investment-calculator") ? "active-tab" : "")" asp-area="" asp-page="/investment-calculator">Инвестиционен калкулатор</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark @(Context.Request.Path.StartsWithSegments("/prepayment-calculator") ? "active-tab" : "")" asp-area="" asp-page="/prepayment-calculator">Калкулатор за предсрочно погасяване</a>
                         </li>
                     </ul>
+
+
                 </div>
             </div>
         </nav>
@@ -39,7 +45,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/chart/dist/jquery.min.js"></script>
+    <script src="~/lib/chart/chart.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
