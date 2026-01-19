@@ -1,9 +1,5 @@
 # 💰 Finance Calculator (ASP.NET Core)
 
-![License](https://img.shields.io)
-![Last Commit](https://img.shields.io)
-![Build Status](https://img.shields.io)
-
 **Finance Calculator** is a comprehensive web application built with ASP.NET Core, designed to help users manage their personal finances, calculate loans, and plan savings effectively.
 
 ## 🚀 Features
